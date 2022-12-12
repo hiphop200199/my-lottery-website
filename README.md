@@ -1,2 +1,2 @@
 # my-lottery-website
-樂透網，
+樂透網
