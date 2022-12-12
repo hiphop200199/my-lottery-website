@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "細明體";
+}
+
+body {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+   background-size: 400%;
+   background-position: 10% 50%;
+    background-image:linear-gradient(75deg,rgb(10, 14, 76),rgb(1, 4, 25) ,rgb(10,14,76),rgb(1, 4,25));
+   animation: bgAnimate 25s linear  infinite;
+}
+
+@keyframes bgAnimate {
+   
+    to {
+     background-position: 70% -10%;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    perspective: 250px;
+    perspective-origin: 20px 20px;
+}
+
+.panel {
+
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    background-color: rgb(255, 253, 202);
+    border-radius: 20px;
+    box-shadow: 0 0 0 10px rgb(255, 251, 0),
+                           0 0 0 20px rgb(255, 6, 6)
+    
+    ;
+    transform: translateY(-16.5%) scale(0.9) rotateX(3deg) rotateY(12deg);
+    animation: panelRotate 5s linear alternate infinite;
+}
+@keyframes panelRotate {
+    0%,100%{transform: translateY(-16.5%) scale(0.9) rotateX(3deg) rotateY(12deg);}
+    50%{transform: translateY(-16.5%) scale(0.9) rotateX(1deg) rotateY(7deg);}
+}
+
+.panel-title {
+    font-size: 8rem;
+    color: rgb(255, 6, 6);
+    border-block-end: 10px solid rgb(255, 251, 0);
+    text-shadow: 3px 0 1px rgb(10, 14, 76),8px 0 1px rgb(1, 4,25);
+    font-style: italic;
+    letter-spacing: 10px;
+}
+
+.panel-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    height: 65%;
+    
+}
+
+.panel-number {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 1px 1px 0 1px rgb(10, 14, 76),
+        1.5px 1.5px 0 3px rgb(1, 4,25);
+       
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    margin: 50px 0;
+    background-image:linear-gradient(15deg,rgb(255,255,6),rgb(255,89,47),rgb(255,6,6));
+    background-size: 300%;
+    -webkit-background-clip: text;
+    animation: btnBg 3s infinite alternate;
+    border-radius: 40px;
+    font-size: 6rem;
+    font-weight: 600;
+    font-style: italic;
+    color:transparent;
+    box-shadow: 1px 0 5px 2px rgb(255, 89,47),
+    5px 5px 8px 10px rgb(255,255,6);
+    animation: btnMove 10s linear infinite alternate;
+    transform: rotateY(50deg);
+    /*-webkit-text-stroke: 1px rgb(1,4,25);*/
+    /*text-shadow: 1px 2px 0 rgb(10, 14, 76),
+        4px 1px 3px rgb(1, 4,25)
+       ;*/
+}
+
+@keyframes btnBg{
+    from{background-position: left;}
+    to{background-position: right;}
+}
+@keyframes btnMove {
+    0%,100%{transform:rotateY(50deg)  translateY(0%) ;}
+    50%{transform:rotateY(5deg)  translateY(100%) ;}
+}
