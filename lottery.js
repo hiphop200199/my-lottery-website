@@ -1,11 +1,10 @@
 $(function () {
-   let backgroundMusic=new Audio("./lottery-pause-background-introduction-music-intro-theme-120447.mp3");
    let dissapointedSound=new Audio("./sadwhisle-91469.mp3");
    let cheerSound=new Audio("./short-crowd-cheer-6713.mp3"); 
    let container=$(".lottery-container"); 
    let numbers=$(".lottery-panel-number");
    let buttonSelf=$(".lottery-button-self");
-   let buttonResult=$(".lotteey-button-result");
+   let buttonResult=$(".lottery-button-result");
    let buttonPc=$(".lottery-button-pc");
    let modal=$(".lottery-modal");
    let modalTitle=$(".lottery-modal-title");
@@ -13,16 +12,12 @@ $(function () {
     for(let i=0;i<numbers.length;i++){
         numbers[i].append(i+1);
     }
-    backgroundMusic.autoplay=true;
-    backgroundMusic.load();
-    backgroundMusic.volume=0.5;
-    backgroundMusic.play();
     let numberBox=[];
     
     buttonSelf.on("click",function(){
+        modalTitle.text("耶!開始吧!!"); 
         modal.show(400);
         container.css("filter","grayscale(80%) blur(5px)");
-        
         numbers.on("click",function(){    
                     if(numberBox.includes($(this).text())){
                         modalTitle.text("不能重複選號!");
@@ -37,6 +32,9 @@ $(function () {
                         modal.show(400);
                         container.css("filter","grayscale(80%) blur(5px)");
                         numbers.off("click");  
+                        $.each(numbers,function(){
+                            numbers.css("background-image","radial-gradient(circle at 1% 1%,rgb(255, 254, 243),rgb(255, 253,202),rgb(255, 255, 6)");
+                        });
                     }
         }); 
      });
@@ -139,6 +137,7 @@ $(function () {
             break;
 
         }
+        numberBox=[];
      });
 
     buttonPc.on("click",function(){
