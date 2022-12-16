@@ -1,38 +1,56 @@
 $(function () {
-   let num=$(".panel-number");
-   let btnself=$(".button-self");
-   let btnres=$(".button-result");
-   let btnpc=$(".button-pc");
-    for(let i=0;i<num.length;i++){
-        num[i].append(i+1);
+   let backgroundMusic=new Audio("./lottery-pause-background-introduction-music-intro-theme-120447.mp3");
+   let dissapointedSound=new Audio("./sadwhisle-91469.mp3");
+   let cheerSound=new Audio("./short-crowd-cheer-6713.mp3"); 
+   let container=$(".lottery-container"); 
+   let numbers=$(".lottery-panel-number");
+   let buttonSelf=$(".lottery-button-self");
+   let buttonResult=$(".lotteey-button-result");
+   let buttonPc=$(".lottery-button-pc");
+   let modal=$(".lottery-modal");
+   let modalTitle=$(".lottery-modal-title");
+   let buttonClose=$(".lottery-modal-close");
+    for(let i=0;i<numbers.length;i++){
+        numbers[i].append(i+1);
     }
+    backgroundMusic.autoplay=true;
+    backgroundMusic.load();
+    backgroundMusic.volume=0.5;
+    backgroundMusic.play();
     let numberBox=[];
-    btnself.on("click",function(){
-        alert("Let`s go!");
-        num.on("click",function(){    
+    
+    buttonSelf.on("click",function(){
+        modal.show(400);
+        container.css("filter","grayscale(80%) blur(5px)");
+        
+        numbers.on("click",function(){    
                     if(numberBox.includes($(this).text())){
-                        alert("不能重複選號!");
+                        modalTitle.text("不能重複選號!");
+                        modal.show(400);
+                        container.css("filter","grayscale(80%) blur(5px)");
                     }else{
                      $(this).css("background-image","radial-gradient(circle at 1% 1%,rgb(255,255,220),rgb(255,255,6),rgb(150,150,3)");
                     numberBox.push(Number.parseInt($(this).text()));
                     }
                     if(numberBox.length===6){
-                        alert("已經選夠了!");
-                        num.off("click");  
+                        modalTitle.text("已經選夠了!");
+                        modal.show(400);
+                        container.css("filter","grayscale(80%) blur(5px)");
+                        numbers.off("click");  
                     }
-        });
-       
-        
-        
-     });  
-     btnres.on("click",function(){
+        }); 
+     });
+     buttonClose.on("click",function(){
+        modal.hide(400);
+        container.css("filter","blur(0) grayscale(0)");
+    }); 
+     buttonResult.on("click",function(){
         let pcNumberBox=[];
         let minValue = 1;//表示要抓取的數字範圍下限
         let maxValue = 49;//表示要抓取的數字範圍上限
         let needCounts = 6;//需要幾個數值
         let theSameNumbers=0;//幾個中獎的數字
         let theLuckyNumberBox=[];//中獎的號碼
-        console.log([...numberBox])
         for (let i = 0; i < needCounts; i++) {
             let number =  Math.floor(Math.random() * maxValue) + minValue;
             let check = pcNumberBox.includes(number);//檢查暫存箱裡是否已經有一樣的數值
@@ -50,42 +68,82 @@ $(function () {
             }
             
         }
-        console.log([...pcNumberBox])
+        
         for(let i=0;i<needCounts;i++){
             if(pcNumberBox.includes(numberBox[i])){
                 theSameNumbers++;
                 theLuckyNumberBox.push(numberBox[i]);
             }
         };
-        console.log([...theLuckyNumberBox]);
         switch (theSameNumbers){
             case 0:
-            alert("真可惜，祝您下次中獎");
+                modalTitle.text("真可惜，祝您下次中獎!"); 
+                modal.show(400);
+               
+                dissapointedSound.play();
+                
+                container.css("filter","grayscale(80%) blur(5px)");
             break;
             case 1:
-            alert(`您中了以下號碼:${[...theLuckyNumberBox] }您中了6獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox] }您中了6獎，恭喜!`); 
+                modal.show(400);
+                
+                cheerSound.play();
+                
+                container.css("filter","grayscale(80%) blur(5px)");
+                
             break;
             case 2:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了5獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了5獎，恭喜!`); 
+                modal.show(400);
+                
+                cheerSound.play();
+               
+                container.css("filter","grayscale(80%) blur(5px)");
+               
             break;
             case 3:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了4獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了4獎，恭喜!`); 
+                modal.show(400);
+               
+                cheerSound.play();
+                
+                container.css("filter","grayscale(80%) blur(5px)");
             break;
             case 4:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了3獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了3獎，恭喜!`); 
+                modal.show(400);
+               
+                cheerSound.play();
+               
+                container.css("filter","grayscale(80%) blur(5px)");
+                
             break;
             case 5:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了2獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了2獎，恭喜!`); 
+                modal.show(400);
+               
+                cheerSound.play();
+               
+                container.css("filter","grayscale(80%) blur(5px)");
+               
             break;
             case 6:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了1獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了1獎，恭喜!`); 
+                modal.show(400);
+                
+                cheerSound.play();
+               
+                container.css("filter","grayscale(80%) blur(5px)");
+               
             break;
 
         }
      });
 
-    btnpc.on("click",function(){
-        alert("let`s go!");
+    buttonPc.on("click",function(){
+        modal.show(400);
+        container.css("filter","grayscale(80%) blur(5px)");
         let choicesNumberBox=[];
         let checkNumberBox=[];
         let minValue = 1;
@@ -131,25 +189,61 @@ $(function () {
         }
         switch (theSameNumbers){
             case 0:
-            alert("真可惜，祝您下次中獎");
+                modalTitle.text("真可惜，祝您下次中獎!"); 
+                modal.show(400);
+               
+                dissapointedSound.play();
+               
+                container.css("filter","grayscale(80%) blur(5px)");
             break;
             case 1:
-            alert(`您中了以下號碼:${[...theLuckyNumberBox] }您中了6獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox] }您中了6獎，恭喜!`); 
+                modal.show(400);
+                
+                cheerSound.play();
+               
+                container.css("filter","grayscale(80%) blur(5px)");
+                
             break;
             case 2:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了5獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了5獎，恭喜!`); 
+                modal.show(400);
+               
+                cheerSound.play();
+               
+                container.css("filter","grayscale(80%) blur(5px)");
+               
             break;
             case 3:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了4獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了4獎，恭喜!`); 
+                modal.show(400);
+               
+                cheerSound.play();
+               
+                container.css("filter","grayscale(80%) blur(5px)");
             break;
             case 4:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了3獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了3獎，恭喜!`); 
+                modal.show(400);
+               
+                cheerSound.play();
+               
+                container.css("filter","grayscale(80%) blur(5px)");
+                
             break;
             case 5:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了2獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了2獎，恭喜!`); 
+                modal.show(400);
+                cheerSound.play();
+                container.css("filter","grayscale(80%) blur(5px)");
+               
             break;
             case 6:
-                alert(`您中了以下號碼:${[...theLuckyNumberBox]}您中了1獎，恭喜!`);
+                modalTitle.text(`您中了以下號碼:${[...theLuckyNumberBox]}您中了1獎，恭喜!`); 
+                modal.show(400);
+                cheerSound.play();
+                container.css("filter","grayscale(80%) blur(5px)");
+               
             break;
 
         }

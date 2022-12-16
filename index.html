@@ -6,95 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="lottery.css" />
     <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.js"
-      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
-      integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script src="lottery.js"></script>
     <title>大●樂●透!!!!!</title>
   </head>
   <body>
-    <!--<audio
+    <audio class="dissapointed-sound" src="./sadwhisle-91469.mp3"></audio>
+    <audio class="cheer-sound" src="./short-crowd-cheer-6713.mp3"></audio>
+    <audio
+      class="background-music"
       src="./lottery-pause-background-introduction-music-intro-theme-120447.mp3"
-      autoplay
-      loop
-    ></audio>-->
-    <div class="container">
-      <div class="panel">
-        <h2 class="panel-title">真是樂$透$!!!</h2>
+    ></audio>
+    <div class="lottery-container">
+      <div class="lottery-panel">
+        <h2 class="lottery-panel-title">真是樂$透$!!!</h2>
 
-        <div class="panel-numbers">
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
-          <div class="panel-number"></div>
+        <div class="lottery-panel-numbers">
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
+          <div class="lottery-panel-number"></div>
         </div>
-        <div class="panel-message"></div>
       </div>
-      <div class="buttons">
-        <div class="button-human">
-          <div class="button button-self">
-            <h4 class="button-text">自己選!</h4>
+      <div class="lottery-buttons">
+        <div class="lottery-button-human">
+          <div class="lottery-button button-self">
+            <h4 class="lottery-button-text">自己選!</h4>
           </div>
-          <div class="button button-result">
-            <h4 class="button-text">結果是?</h4>
+          <div class="lottery-button button-result">
+            <h4 class="lottery-button-text">結果是?</h4>
           </div>
         </div>
-        <div class="button button-pc">
-          <h4 class="button-text">電腦來!</h4>
+        <div class="lottery-button button-pc">
+          <h4 class="lottery-button-text">電腦來!</h4>
         </div>
       </div>
     </div>
+    <dialog class="lottery-modal">
+      <h1 class="lottery-modal-title">耶!開始吧!</h1>
+      <button class="lottery-modal-close">Ok!</button>
+    </dialog>
   </body>
 </html>
