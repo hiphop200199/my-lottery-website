@@ -3,27 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,user-scalable=no"
+    />
     <link rel="stylesheet" href="lottery.css" />
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
-    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script src="lottery.js"></script>
     <title>大●樂●透!!!!!</title>
   </head>
   <body>
-    <audio class="dissapointed-sound" src="./sadwhisle-91469.mp3"></audio>
-    <audio class="cheer-sound" src="./short-crowd-cheer-6713.mp3"></audio>
+    <audio class="dissapointed-sound" src="./sadwhisle.mp3"></audio>
+    <audio class="cheer-sound" src="./crowd-cheer.mp3"></audio>
     <audio
       class="background-music"
-      src="./lottery-pause-background-introduction-music-intro-theme-120447.mp3"
+      src="./lottery-background-music.mp3"
       autoplay
       loop
     ></audio>
-    <div class="lottery-container">
-      <div class="lottery-panel">
+    <article class="lottery-container">
+      <section class="lottery-panel">
         <h2 class="lottery-panel-title">真是樂$透$!!!</h2>
 
-        <div class="lottery-panel-numbers">
+        <section class="lottery-panel-numbers">
           <div class="lottery-panel-number"></div>
           <div class="lottery-panel-number"></div>
           <div class="lottery-panel-number"></div>
@@ -73,22 +75,21 @@
           <div class="lottery-panel-number"></div>
           <div class="lottery-panel-number"></div>
           <div class="lottery-panel-number"></div>
+        </section>
+      </section>
+      <section class="lottery-buttons">
+        <div class="lottery-button lottery-button-self">
+          <h4 class="lottery-button-text">自己選!</h4>
         </div>
-      </div>
-      <div class="lottery-buttons">
-        <div class="lottery-button-human">
-          <div class="lottery-button lottery-button-self">
-            <h4 class="lottery-button-text">自己選!</h4>
-          </div>
-          <div class="lottery-button lottery-button-result">
-            <h4 class="lottery-button-text">結果是?</h4>
-          </div>
+        <div class="lottery-button lottery-button-result">
+          <h4 class="lottery-button-text">結果是?</h4>
         </div>
+
         <div class="lottery-button lottery-button-pc">
           <h4 class="lottery-button-text">電腦來!</h4>
         </div>
-      </div>
-    </div>
+      </section>
+    </article>
     <dialog class="lottery-modal">
       <h1 class="lottery-modal-title">耶!開始吧!</h1>
       <button class="lottery-modal-close">Ok!</button>
