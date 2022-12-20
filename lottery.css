@@ -248,4 +248,22 @@ body {
         color:rgb(10,14,76);
         transform: translateZ(0);
     }
+    .lottery-modal{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 45vw;
+        height:25vh;
+        padding: 2%;
+        box-shadow:1.5px 3.5px 0 3px rgb(1, 4,25);
+        transform:translate(-22.5vw,-12.5vh);
+    }
+    .lottery-modal-title{
+        font-size: 5vw;
+        text-shadow: 1px 0 0 rgb(10, 14, 76),1.5px 0 0 rgb(1, 4,25);
+    }
+    .lottery-modal-close{
+        font-size: 4.7vw;
+    }
 }
