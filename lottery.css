@@ -261,7 +261,7 @@ body {
     .lottery-modal-title{
         font-size: 5vw;
         text-shadow: 1px 0 0 rgb(10, 14, 76),1.5px 0 0 rgb(1, 4,25);
-        user-select: none;
+        user-select: none;/*避免誤選文字*/
     }
     .lottery-modal-close{
         font-size: 4.7vw;
