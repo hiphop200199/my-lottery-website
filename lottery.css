@@ -151,19 +151,19 @@ body {
     width: 35vw;
     min-height:35vh;
     padding: 0.5%;
-    border-radius: 1%;
+    border-radius: 2%;
     background-image: radial-gradient(circle at 1% 1%,rgb(255, 254, 243),rgb(255, 253,202),rgb(255, 255, 6));
-    box-shadow: 1px 1px 0 1px rgb(10, 14, 76),
-        1.5px 1.5px 0 3px rgb(1, 4,25);
+    box-shadow: 1px 0 0 1px rgb(10, 14, 76),
+        1.5px 3.5px 0 5px rgb(1, 4,25);
     transform:translate(-17.5vw,-17.5vh);
 }
 .lottery-modal-title{
-    font-size: 2.5rem;
+    font-size: 3vw;
     font-weight: 600;
     letter-spacing: 1px;
     color: rgb(255, 6, 6);
     text-shadow: 1px 0 0 rgb(10, 14, 76),3px 0 0 rgb(1, 4,25);
-    margin-bottom: 1rem;
+   margin-bottom: 20%;
 }
 .lottery-modal-close{
     display: block;
@@ -172,11 +172,11 @@ body {
     -webkit-background-clip: text;
     background-position: left;
     animation: buttonTextAnimation 2s linear infinite alternate;
-    font-size: 2rem;
+    font-size: 2.2vw;
     font-weight: 600;
     color:transparent;
-    border: none;
-    width: 6rem;
+    border:none;
+    width: 20%;
     cursor: pointer;
 }
 @media screen and (max-width:768px) {
