@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded",function(){
         numbers.addEventListener("click",function(){    
                     if(numberBox.includes(this.innerText)){
                         modalTitle.innerText="不能重複選號!";
-                        modal.showModal();
+                        modal.show();
                         container.style.filter="grayscale(80%) blur(5px)";
                     }else{
                      this.style.backgroundImage="radial-gradient(circle at 1% 1%,rgb(255,255,220),rgb(255,255,6),rgb(150,150,3)";
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded",function(){
      });
 
     buttonPc.addEventListener("click",function(){
-        modal.showModal();
+        modal.show();
         container.style.filter="grayscale(80%) blur(5px)";
         let choicesNumberBox=[];
         let checkNumberBox=[];
