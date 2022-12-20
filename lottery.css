@@ -67,6 +67,7 @@ body {
     text-shadow: 1px 0 0 rgb(10, 14, 76),2px 0 0 rgb(1, 4,25);
     padding: 1%;
     letter-spacing: 5%;
+    user-select: none;
   
 }
 
@@ -81,6 +82,7 @@ body {
 }
 
 .lottery-panel-number {
+    user-select: none;
     cursor: pointer;
     width: 5.5vw;
     height: 5.5vw;
@@ -133,6 +135,7 @@ body {
     color:transparent;
     transform: translateZ(-1rem);
     white-space: nowrap;
+    user-select: none;
 }
 @keyframes buttonTextAnimation {
     to{background-position: right;}
@@ -162,7 +165,7 @@ body {
     letter-spacing: 1px;
     color: rgb(255, 6, 6);
     text-shadow: 1px 0 0 rgb(10, 14, 76),3px 0 0 rgb(1, 4,25);
-   
+   user-select: none;
 }
 .lottery-modal-close{
     
@@ -245,6 +248,7 @@ body {
         text-shadow:1px 0 1.2px rgb(1, 4,25);
         color:rgb(10,14,76);
         transform: translateZ(0);
+        user-select: none;
     }
     .lottery-modal{
         width: 45vw;
@@ -257,6 +261,7 @@ body {
     .lottery-modal-title{
         font-size: 5vw;
         text-shadow: 1px 0 0 rgb(10, 14, 76),1.5px 0 0 rgb(1, 4,25);
+        user-select: none;
     }
     .lottery-modal-close{
         font-size: 4.7vw;
