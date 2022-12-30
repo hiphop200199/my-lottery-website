@@ -16,29 +16,41 @@ document.addEventListener("DOMContentLoaded",function(){
     let numberBox=[];
     
     buttonSelf.addEventListener("click",function(){
-        modalTitle.innerText("耶!開始吧!!"); 
+        function chooseNumber(){
+            if(numberBox.includes(this.innerText)){
+                modalTitle.innerText="不能重複選號!";
+                modal.show();
+                container.style.filter="grayscale(80%) blur(5px)";
+            }else{
+             this.style.backgroundImage="radial-gradient(circle at 1% 1%,rgb(255,255,220),rgb(255,255,6),rgb(150,150,3)";
+            numberBox.push(Number.parseInt(this.innerText));
+            }
+            if(numberBox.length===6){
+                modalTitle.innerText="已經選夠了!";
+                modal.show();
+                container.style.filter="grayscale(80%) blur(5px)";  
+            }
+        }
+        modalTitle.innerText="耶!開始吧!!"; 
         modal.show();
         container.style.filter="grayscale(80%) blur(5px)";
-        numbers.addEventListener("click",function(){    
-                    if(numberBox.includes(this.innerText)){
-                        modalTitle.innerText="不能重複選號!";
-                        modal.show();
-                        container.style.filter="grayscale(80%) blur(5px)";
-                    }else{
-                     this.style.backgroundImage="radial-gradient(circle at 1% 1%,rgb(255,255,220),rgb(255,255,6),rgb(150,150,3)";
-                    numberBox.push(Number.parseInt(this.innerText));
-                    }
-                    if(numberBox.length===6){
-                        modalTitle.innerText="已經選夠了!";
-                        modal.show();
-                        container.style.filter="grayscale(80%) blur(5px)";
-                        numbers.removeEventListener("click");  
-                        numbers.forEach(function(item){
-                            item.style.backgroundImage="radial-gradient(circle at 1% 1%,rgb(255, 254, 243),rgb(255, 253,202),rgb(255, 255, 6)";
-                        });
-                    }
-        }); 
-     });
+        for(let i=0;i<numbers.length;i++){
+            numbers[i].addEventListener("click",chooseNumber);
+        }
+        if(numberBox.length===6){
+            for(let i=0;i<numbers.length;i++){
+                numbers[i].removeEventListener("click",chooseNumber);
+            }
+        }
+           
+            
+               
+            
+           
+          
+    });
+   
+     
      buttonClose.addEventListener("click",function(){
         modal.close();
         container.style.filter="blur(0) grayscale(0)";
@@ -139,6 +151,9 @@ document.addEventListener("DOMContentLoaded",function(){
 
         }
         numberBox=[];
+        numbers.forEach(function(item){
+            item.style.backgroundImage="radial-gradient(circle at 1% 1%,rgb(255, 254, 243),rgb(255, 253,202),rgb(255, 255, 6)";
+        });
      });
 
     buttonPc.addEventListener("click",function(){
