@@ -7,92 +7,28 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0,user-scalable=no"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/hiphop200199/Atmos.CSS@main/Atmos.css"
+    />
     <link rel="stylesheet" href="lottery.css" />
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <script src="lottery.js"></script>
-    <title>大●樂●透!!!!!</title>
+    <title>Lucky!!!!!</title>
   </head>
   <body>
     <audio class="dissapointed-sound" src="./sadwhisle.mp3"></audio>
     <audio class="cheer-sound" src="./crowd-cheer.mp3"></audio>
-    <audio
-      class="background-music"
-      src="./lottery-background-music.mp3"
-      autoplay
-      loop
-    ></audio>
-    <article class="lottery-container">
-      <section class="lottery-panel">
-        <h2 class="lottery-panel-title">真是樂$透$!!!</h2>
+    <div class="tech-container">
+      <section class="tech-main" style="flex-direction: column">
+        <h2 class="tech-h2">Lucky?</h2>
 
-        <section class="lottery-panel-numbers">
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-          <div class="lottery-panel-number"></div>
-        </section>
+        <div id="buttonPc" class="tech-button">Start!</div>
       </section>
-      <section class="lottery-buttons">
-        <div class="lottery-button lottery-button-self">
-          <h4 class="lottery-button-text">自己選!</h4>
-        </div>
-        <div class="lottery-button lottery-button-result">
-          <h4 class="lottery-button-text">結果是?</h4>
-        </div>
-
-        <div class="lottery-button lottery-button-pc">
-          <h4 class="lottery-button-text">電腦來!</h4>
-        </div>
-      </section>
-    </article>
+    </div>
     <dialog class="lottery-modal">
-      <h1 class="lottery-modal-title">耶!開始吧!</h1>
-      <button class="lottery-modal-close">Ok!</button>
+      <h1 id="modal-title" class="tech-h5"></h1>
+      <button id="modal-close" class="tech-button">Ok!</button>
     </dialog>
   </body>
 </html>
